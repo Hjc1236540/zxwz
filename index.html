@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筑家装饰 | 打造您的理想空间</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.font.im/css?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init({
+            publicKey: 'v41YBHziPjDDBYRHW',
+        });
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            500: '#d97706', // Amber 600 equivalent
+                            600: '#b45309',
+                            900: '#1c1917', // Stone 900
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+        }
+        .service-card:hover .icon-box {
+            transform: translateY(-5px);
+            background-color: #d97706;
+            color: white;
+        }
+        .portfolio-item img {
+            transition: transform 0.5s ease;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-white antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-house-chimney text-brand-500 text-3xl"></i>
+                    <span class="font-bold text-2xl text-gray-900 tracking-tight">筑家<span class="text-brand-500">装饰</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-brand-500 font-medium transition">首页</a>
+                    <a href="#services" class="text-gray-600 hover:text-brand-500 font-medium transition">服务项目</a>
+                    <a href="#portfolio" class="text-gray-600 hover:text-brand-500 font-medium transition">精选案例</a>
+                    <a href="#about" class="text-gray-600 hover:text-brand-500 font-medium transition">关于我们</a>
+                    <a href="#contact" class="px-6 py-2.5 bg-brand-500 text-white font-medium rounded-full hover:bg-brand-600 transition shadow-lg shadow-brand-500/30">
+                        免费预约
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-gray-50 rounded-md">首页</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-gray-50 rounded-md">服务项目</a>
+                <a href="#portfolio" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-gray-50 rounded-md">精选案例</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-500 hover:bg-gray-50 rounded-md">关于我们</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-brand-500 hover:bg-gray-50 rounded-md">免费预约</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://image.qwenlm.ai/public_source/67b63312-3e0f-481a-b561-7e92d5584c51/119b3aafc-15cf-4995-b20e-870e741904fe.png" alt="Modern Living Room" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                设计生活，<br>
+                <span class="text-brand-500">筑造梦想</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+                我们专注于为您提供高端、个性化、环保的室内设计与装修服务，让每一个空间都充满温度与艺术感。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#portfolio" class="px-8 py-4 bg-brand-500 text-white font-semibold rounded-full hover:bg-brand-600 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    查看案例
+                </a>
+                <a href="#contact" class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-semibold rounded-full hover:bg-white hover:text-gray-900 transition">
+                    联系我们
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-brand-500 mb-2">15+</div>
+                    <div class="text-gray-500 text-sm uppercase tracking-wide">年行业经验</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-brand-500 mb-2">2000+</div>
+                    <div class="text-gray-500 text-sm uppercase tracking-wide">完工项目</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-brand-500 mb-2">50+</div>
+                    <div class="text-gray-500 text-sm uppercase tracking-wide">专业设计师</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-brand-500 mb-2">100%</div>
+                    <div class="text-gray-500 text-sm uppercase tracking-wide">客户满意度</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-500 font-semibold tracking-wide uppercase text-sm mb-2">我们的服务</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">全方位装修解决方案</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="icon-box w-16 h-16 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center text-2xl mb-6 transition-all duration-300">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">全案设计</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        从概念到落地，我们提供完整的室内设计方案，包括空间规划、色彩搭配、材质选择及软装陈设。
+                    </p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="icon-box w-16 h-16 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center text-2xl mb-6 transition-all duration-300">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">硬装施工</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        自有专业施工团队，严格遵循标准化工艺，水电、木工、瓦工、油漆每一道工序都精益求精。
+                    </p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="icon-box w-16 h-16 bg-brand-50 text-brand-500 rounded-xl flex items-center justify-center text-2xl mb-6 transition-all duration-300">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">软装搭配</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        精选全球优质家具与家居饰品，为您打造舒适、美观且富有生活气息的居住环境。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-brand-500 font-semibold tracking-wide uppercase text-sm mb-2">精选案例</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900">见证我们的匠心之作</h3>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center text-brand-500 font-medium hover:text-brand-600 mt-4 md:mt-0">
+                    查看更多案例 <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Item 1 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl cursor-pointer h-80">
+                    <img src="https://image.qwenlm.ai/public_source/67b63312-3e0f-481a-b561-7e92d5584c51/14c0d50cc-6875-4cc2-b0b4-9ef83cdaf4bc.png" alt="Kitchen" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h4 class="text-white text-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-300">现代简约厨房</h4>
+                        <p class="text-gray-300 text-sm mt-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">住宅装修 · 2023</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl cursor-pointer h-80">
+                    <img src="https://image.qwenlm.ai/public_source/67b63312-3e0f-481a-b561-7e92d5584c51/1a937e1ca-74b1-4e60-b7e5-b73206d825e9.png" alt="Bedroom" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h4 class="text-white text-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-300">温馨主卧设计</h4>
+                        <p class="text-gray-300 text-sm mt-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">卧室改造 · 2023</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl cursor-pointer h-80">
+                    <img src="https://image.qwenlm.ai/public_source/67b63312-3e0f-481a-b561-7e92d5584c51/1916e2c01-b5d5-4dad-b957-4a4f9c91e809.png" alt="Office" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h4 class="text-white text-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-300">极简家庭办公区</h4>
+                        <p class="text-gray-300 text-sm mt-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">书房设计 · 2022</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl cursor-pointer h-80">
+                    <img src="https://image.qwenlm.ai/public_source/67b63312-3e0f-481a-b561-7e92d5584c51/1b8e2e496-fcb1-450e-9a03-259c9f8fc601.png" alt="Bathroom" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h4 class="text-white text-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-300">奢华卫浴空间</h4>
+                        <p class="text-gray-300 text-sm mt-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">卫生间翻新 · 2023</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href="#" class="inline-flex items-center text-brand-500 font-medium hover:text-brand-600">
+                    查看更多案例 <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-200 rounded-full opacity-50 z-0"></div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-brand-100 rounded-full opacity-50 z-0"></div>
+                        <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Team working" class="relative z-10 rounded-2xl shadow-2xl w-full object-cover h-[500px]">
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-brand-500 font-semibold tracking-wide uppercase text-sm mb-2">关于筑家</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">不仅仅是装修，更是生活方式的革新</h3>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        筑家装饰成立于 2008 年，是一家集室内设计、预算、施工、材料于一体的专业化装饰公司。我们拥有一支充满激情与创造力的设计团队，以及技术精湛的施工队伍。
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        我们坚持"以人为本，环保先行"的理念，致力于为每一位客户打造健康、舒适、美观的居住空间。无论是新房装修还是旧房改造，我们都将全力以赴，不负所托。
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="flex -space-x-2">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/85.jpg" alt="">
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center text-xs font-bold text-gray-600">+2k</div>
+                        </div>
+                        <span class="text-gray-600 font-medium">来自满意客户的评价</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-brand-500 font-semibold tracking-wide uppercase text-sm mb-2">联系我们</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">准备好开始您的装修之旅了吗？</h3>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        填写右侧表单，我们的专业顾问将在 24 小时内与您联系，为您提供免费的初步咨询和报价服务。
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-50 rounded-full flex items-center justify-center text-brand-500 flex-shrink-0">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">公司地址</h4>
+                                <p class="text-gray-600">湖南省怀化市靖州县</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-50 rounded-full flex items-center justify-center text-brand-500 flex-shrink-0">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">联系电话</h4>
+                                <p class="text-gray-600">15774298853</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-50 rounded-full flex items-center justify-center text-brand-500 flex-shrink-0">
+                                <i class="fa-solid fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900">电子邮箱</h4>
+                                <p class="text-gray-600">chaojunhu@163.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <form id="contact-form" onsubmit="event.preventDefault(); sendEmail();">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">您的姓名</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition" placeholder="张先生/女士" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">联系电话</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition" placeholder="138xxxx1234" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">房屋面积 (㎡)</label>
+                            <input type="number" id="area" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition" placeholder="例如：120">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">装修需求</label>
+                            <textarea rows="4" id="message" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition" placeholder="请简单描述您的装修需求..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-brand-500 text-white font-bold rounded-lg hover:bg-brand-600 transition shadow-lg shadow-brand-500/30">
+                            免费获取报价
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-house-chimney text-brand-500 text-2xl"></i>
+                        <span class="font-bold text-xl tracking-tight">筑家装饰</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        专注高品质家居装修，为您打造理想中的家。专业、诚信、创新是我们的核心价值观。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-500 transition"><i class="fa-brands fa-weixin"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-500 transition"><i class="fa-brands fa-weibo"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-500 transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">快速链接</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-brand-500 transition">首页</a></li>
+                        <li><a href="#services" class="hover:text-brand-500 transition">服务项目</a></li>
+                        <li><a href="#portfolio" class="hover:text-brand-500 transition">精选案例</a></li>
+                        <li><a href="#about" class="hover:text-brand-500 transition">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">服务项目</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-brand-500 transition">全案设计</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition">硬装施工</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition">软装搭配</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition">旧房改造</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">订阅我们</h4>
+                    <p class="text-gray-400 text-sm mb-4">获取最新的装修灵感和优惠信息。</p>
+                    <form class="flex gap-2" onsubmit="event.preventDefault(); alert('订阅成功！');">
+                        <input type="email" placeholder="您的邮箱" class="bg-gray-800 border-none rounded-lg px-4 py-2 text-sm w-full focus:ring-1 focus:ring-brand-500 outline-none">
+                        <button class="bg-brand-500 px-4 py-2 rounded-lg text-sm font-bold hover:bg-brand-600 transition">订阅</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">© 2023 筑家装饰有限公司。All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition">隐私政策</a>
+                    <a href="#" class="hover:text-white transition">服务条款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Send email function
+        function sendEmail() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const area = document.getElementById('area').value;
+            const message = document.getElementById('message').value;
+
+            // Prepare email template params
+            const templateParams = {
+                name: name,
+                phone: phone,
+                area: area,
+                message: message
+            };
+
+            // Send email using EmailJS
+            emailjs.send('service_gzqzojs', 'template_ymxv4w8', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('感谢您的留言！我们会尽快与您联系。');
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('发送失败，错误信息：' + JSON.stringify(error));
+                });
+        }
+    </script>
+</body>
+</html>
+
